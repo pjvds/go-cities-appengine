@@ -1,23 +1,21 @@
-package hello
+package cities
 
 import (
 	"encoding/json"
-	"fmt"
 	"net/http"
 )
 
 var (
+	// The cities that we will serve
 	cities = []string{
 		"Amsterdam", "San Francisco", "Paris", "New York", "Portland",
 	}
 )
 
 func init() {
-	r := http.NewServeMux()
-	r.HandleFunc("/", handleIndex)
-	r.HandleFunc("/ping", pingHandler)
-
-	http.Handle("/", r)
+	// Register the index handler to the
+	// default DefaultServeMux.
+	http.HandleFunc("/", handleIndex)
 }
 
 func handleIndex(rw http.ResponseWriter, req *http.Request) {
@@ -25,8 +23,4 @@ func handleIndex(rw http.ResponseWriter, req *http.Request) {
 
 	encoder := json.NewEncoder(rw)
 	encoder.Encode(cities)
-}
-
-func pingHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprint(w, "Pong!")
 }
