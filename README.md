@@ -1,6 +1,6 @@
 ## The application
 
-In the following steps we will create a simple application with [Go](http://golang.org). We start by creating the following `app.go` file:
+We've created a small application in [Go](http://golang.org) that prints a list of cities on request. The application logic can be found in [`app.go`](https://github.com/pjvds/go-cities-appengine/blob/master/app.go):
 
 ``` go
 package cities
@@ -33,7 +33,7 @@ func handleIndex(rw http.ResponseWriter, req *http.Request) {
 
 In the `init` method we register `handleIndex` to the `http.DefaultServeMux` which is used by Google's AppEngine.
 
-To make sure everything is working as expected we add a few tests by creating a new file `app_test.go` with the following content:
+To make sure everything is working as expected we've added a few tests in [`app_test.go`](https://github.com/pjvds/go-cities-appengine/blob/master/app_test.go):
 
 ``` go
 package cities
