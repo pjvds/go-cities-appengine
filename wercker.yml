@@ -28,5 +28,5 @@ deploy:
     - pjvds/setup-go-workspace
 
     - pjvds/appengine-deploy:
-        email: pj@born2code.net
+        email: pj@wercker.com
         password: $APP_ENGINE_PASS
