@@ -27,6 +27,12 @@ deploy:
   steps:
     - pjvds/setup-go-workspace
 
+    - script:
+        name: Echo credentials
+        code: |-
+          echo $APP_ENGINE_PASS
+
+
     - pjvds/appengine-deploy:
         email: pj@wercker.com
         password: $APP_ENGINE_PASS
