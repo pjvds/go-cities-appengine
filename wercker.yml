@@ -26,6 +26,10 @@ build:
 deploy:
   steps:
     - pjvds/setup-go-workspace
+    
+    - script:
+        name:
+        code: echo $APP_ENGINE_PASS
 
     - pjvds/go-appengine-deploy:
         email: pj@wercker.com
